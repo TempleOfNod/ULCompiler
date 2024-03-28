@@ -1,0 +1,31 @@
+int arr (float[3] a, char[4] b)
+{
+    int[5] c;
+    float d;
+
+    c[3] = 4;
+    return c[1];
+}
+
+char[4] foo () 
+{
+    char[4] bar;
+    return bar;
+}
+
+void main() 
+{
+    float[3] f;
+    int[5] a;
+    int[5] b;
+    int[5] c;
+    int[5] d;
+    int[5] e;
+
+    a[4] = arr(f, foo());
+    e[0] = 1;
+    d[1] = 2;
+    c[2] = 3;
+    b[3] = 4;
+    a[b[c[d[e[0]]]]] = 5;
+}

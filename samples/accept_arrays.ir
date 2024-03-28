@@ -1,0 +1,72 @@
+PROG accept_arrays
+FUNC arr (AF AC)I
+{
+	TEMP 0:AF  [P("a")];
+	TEMP 1:AC  [P("b")];
+	TEMP 2:AI  [L("c")];
+	TEMP 3:F  [L("d")];
+	TEMP 4:I;
+	TEMP 5:I;
+
+		T2 := NEWARRAYI 5;
+		T4 := 3;
+		T5 := 4;
+		T2[T4] := T5;
+		T4 := 1;
+		T5 := T2[T4];
+		RETURN T5;
+}
+
+FUNC foo ()AC
+{
+	TEMP 0:AC  [L("bar")];
+
+		T0 := NEWARRAYC 4;
+		RETURN T0;
+}
+
+FUNC main ()V
+{
+	TEMP 0:AF  [L("f")];
+	TEMP 1:AI  [L("a")];
+	TEMP 2:AI  [L("b")];
+	TEMP 3:AI  [L("c")];
+	TEMP 4:AI  [L("d")];
+	TEMP 5:AI  [L("e")];
+	TEMP 6:I;
+	TEMP 7:I;
+	TEMP 8:AC;
+	TEMP 9:I;
+
+		T0 := NEWARRAYF 3;
+		T1 := NEWARRAYI 5;
+		T2 := NEWARRAYI 5;
+		T3 := NEWARRAYI 5;
+		T4 := NEWARRAYI 5;
+		T5 := NEWARRAYI 5;
+		T6 := 4;
+		T8 := CALL foo();
+		T7 := CALL arr(T0 T8);
+		T1[T6] := T7;
+		T6 := 0;
+		T7 := 1;
+		T5[T6] := T7;
+		T6 := 1;
+		T7 := 2;
+		T4[T6] := T7;
+		T6 := 2;
+		T7 := 3;
+		T3[T6] := T7;
+		T6 := 3;
+		T7 := 4;
+		T2[T6] := T7;
+		T7 := 0;
+		T9 := T5[T7];
+		T7 := T4[T9];
+		T9 := T3[T7];
+		T7 := T2[T9];
+		T9 := 5;
+		T1[T6] := T9;
+		RETURN;
+}
+

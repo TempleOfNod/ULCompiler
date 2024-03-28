@@ -1,0 +1,10 @@
+void main(){
+    string foo;
+    string bar;
+    foo = "f";
+    bar = "";
+    while (bar < "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo") {
+        bar = bar + "o";
+    }
+    println foo + bar;
+}
